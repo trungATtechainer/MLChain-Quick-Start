@@ -130,4 +130,6 @@ if __name__ == '__main__':
 
 Finally, run python app.py in your terminal and get your app running. Here, we test with an image from the MNIST dataset. 
 
-[image](http://i.imgur.com/aNIFpdQ.png)
+![image](http://i.imgur.com/aNIFpdQ.png)
+
+![output](http://i.imgur.com/LN0xIUK.jpg)
