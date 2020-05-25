@@ -13,7 +13,7 @@ In this repository, you can find the following files:
 
 The <b> model.pt </b> file contains the model we already trained using the MNIST dataset and Pytorch.
  
-The <b> app.py </b> file is where we will use to deploy our model. You can create a new python file to follow this tutorial. The app.py file can serve as a good reference point.
+The <b> app.py </b> file is where we will use to deploy our model. You can create a new python file to follow this tutorial if you want. The app.py file can serve as a good reference point.
 
 Upon opening the app.py files, we will import the following libraries:
 
@@ -126,3 +126,8 @@ serve_model = ServeModel(model)
 if __name__ == '__main__':
     from mlchain.rpc.server.flask_server import FlaskServer
     FlaskServer(serve_model).run(port=5000, threads = 5)
+```
+
+Finally, run python app.py in your terminal and get your app running. Here, we test with an image from the MNIST dataset. 
+
+[image](http://i.imgur.com/aNIFpdQ.png)
