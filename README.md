@@ -1,4 +1,4 @@
-# Tutorial
+# ML Chain Quick Start Tutorial
 
 Build your first Machine Learning app using MLchain. I this quickstart tutorial we will
 use MLchain to build our first ML chain app. First, clone the quick-start repository [here]().
