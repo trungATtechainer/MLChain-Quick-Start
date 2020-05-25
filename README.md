@@ -6,7 +6,7 @@ use MLchain to build our first ML chain app.
 ## Contents
 
 - [Installation]()
-- [Using the library]
+- [Building our app]()
 
 ### 1. Installation
 
@@ -28,7 +28,7 @@ The <b> model.pt </b> file contains the model we already trained using the MNIST
  
 The <b> app.py </b> file is where we will use to deploy our model. You can create a new python file to follow this tutorial if you want. The app.py file can serve as a good reference point.
 
-### 2. Using the library
+### 2. Building our app
 
 #### a. Import the libraries
 Upon opening the app.py files, we will import the following libraries:
