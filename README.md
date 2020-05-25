@@ -1,7 +1,7 @@
 # ML Chain Quick Start Tutorial
 
-Build your first Machine Learning app using MLchain. I this quickstart tutorial we will
-use MLchain to build our first ML chain app. First, clone the quick-start repository [here]().
+Build your first Machine Learning app using MLchain. Through this quickstart tutorial we will
+use MLchain to build our first ML chain app. First, clone the quick-start repository.
 
 In this repository, you can find the following files:
 
@@ -13,7 +13,7 @@ In this repository, you can find the following files:
 
 The <b> model.pt </b> file contains the model we already trained using the MNIST dataset and Pytorch.
  
-The <b> app.py </b> file is where we will use to deploy our model.
+The <b> app.py </b> file is where we will use to deploy our model. You can create a new python file to follow this tutorial. The app.py file can serve as a good reference point.
 
 Upon opening the app.py files, we will import the following libraries:
 
