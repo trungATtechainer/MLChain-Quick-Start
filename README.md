@@ -1,7 +1,20 @@
 # ML Chain Quick Start Tutorial
 
 Build your first Machine Learning app using MLchain. Through this quickstart tutorial we will
-use MLchain to build our first ML chain app. First, clone the quick-start repository.
+use MLchain to build our first ML chain app. 
+
+## Contents
+
+- [Installation]()
+- [Using the library]
+
+### 1. Installation
+
+First, install MLChain:
+
+    $ pip install https://techainer-packages.s3-ap-southeast-1.amazonaws.com/mlchain/mlchain-0.0.4-py3-none-any.whl
+
+Next, clone the repository.
 
 In this repository, you can find the following files:
 
@@ -15,6 +28,9 @@ The <b> model.pt </b> file contains the model we already trained using the MNIST
  
 The <b> app.py </b> file is where we will use to deploy our model. You can create a new python file to follow this tutorial if you want. The app.py file can serve as a good reference point.
 
+### 2. Using the library
+
+#### a. Import the libraries
 Upon opening the app.py files, we will import the following libraries:
 
 ```python
@@ -32,7 +48,8 @@ import numpy as np
 from mlchain.base import ServeModel
 ```
 
-Next, redefine our model. This model should be defined the same as your prior model for training.
+#### b. Redefine our model
+This redefined model should be defined the same as your prior model for training.
 
 ```python
 # redefine our model
@@ -44,7 +61,9 @@ class Net(nn.Module):
         ...
 ```
 
-Next, create a model instance. This will be our main working area. 
+#### c. Create a model instance for MLChain
+
+First, create a model class. This will be our main working area. 
 
 ```python
 class Model():
@@ -54,7 +73,6 @@ class Model():
 
     def image_predict(self, img:np.ndarray):
         ...
-
 ```
 
 To begin, we download and import the current state of our model. This should be done under the <b> init() </b> function.
@@ -84,6 +102,7 @@ prediction of our model. This function start with turning our img input (origina
 a PIL.Image instance. This helps our transform function defined by pytorch transform the image for our analysis.
 
 We also reshape our image into 4 dimensions tensor as the first value represents the batch_size, which is 1.
+
 ```python
     def image_predict(self, img:np.ndarray):
 
@@ -111,6 +130,7 @@ We can now add prediction and return our final result under <b> image_predict() 
     return int(pred)
 ```
 
+#### d. Deploy our model
 To define and return our final result, we use MLchain's provided functions 
 including serve_model and FlaskServer to host our app.
 
