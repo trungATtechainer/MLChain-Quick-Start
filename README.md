@@ -61,7 +61,7 @@ To begin, we download and import the current state of our model. This should be 
 
 ```python
     # define our model
-    self.model = Net()
+    self.model = Net() # same as our pre-defined model above
 
     # load model state_dict
     self.model.load_state_dict(torch.load('model.pt'))
@@ -95,7 +95,7 @@ We also reshape our image into 4 dimensions tensor as the first value represents
     
         # reshape image into 4 - dimensions
         img = img.view(1, img.shape[0], img.shape[1], img.shape[2])
-```       
+```
 
 We can now add prediction and return our final result under <b> image_predict() </b>:
 ```python
