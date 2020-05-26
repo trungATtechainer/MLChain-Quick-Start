@@ -1,15 +1,13 @@
+# import libraries
 # pytorch dependencies
-import torch
-from torchvision import transforms
-import torch.nn as nn
-import torch.nn.functional as F
+
 
 # support for image processing
-from PIL import Image
-import numpy as np
+
 
 # mlchain libraries
-from mlchain.base import ServeModel
+
+
 
 # redefine our model
 class Net(nn.Module):
@@ -54,20 +52,7 @@ class Model():
     # define and load our prior model
     def __init__(self):
 
-        # define our model
-        self.model = Net()
-
-        # load model state_dict
-        self.model.load_state_dict(torch.load('model.pt'))
-
-        # transformation function
-        self.transform = transforms.Compose([transforms.Grayscale(num_output_channels=1),
-                                             transforms.Resize(28),
-                                             transforms.ToTensor(),
-                                             transforms.Normalize((0.5,), (0.5,))])
-
-        # get our model
-        self.model.eval() # set to evaluation mode
+        # TODO: ADD CODE HERE
 
     # define function for predicting images
     def image_predict(self, img:np.ndarray):
@@ -80,25 +65,7 @@ class Model():
         the input img:np.ndarray would be sufficient. It's important how you work with that input.
         """
 
-        # form an PIL instance from Image
-        img = Image.fromarray(img)
-
-        # transform image using our defined transformation
-        img = self.transform(img)
-
-        # reshape image into 4 - dimensions
-        img = img.view(1, img.shape[0], img.shape[1], img.shape[2])
-
-        # predict class using our model
-        with torch.no_grad():
-            # forward function
-            preds = self.model(img)
-
-            # get maximun value
-            pred = np.argmax(preds, axis=1)
-
-        # return our final result (predicted number)
-        return int(pred)
+       # TODO: ADD CODE HERE
 
 # deploying our model
 # define model
