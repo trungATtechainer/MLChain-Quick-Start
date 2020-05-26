@@ -15,14 +15,14 @@ from mlchain.base import ServeModel
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
-        # convolutional layer (sees 28x28x1 image tensor)
+        # convolutional layer
         self.conv1 = nn.Conv2d(1, 10, 5)
-        # convolutional layer (sees 28x28x24 tensor)
+        # convolutional layer
         self.conv2 = nn.Conv2d(10, 20, 5)
 
         # max pooling layer
         self.pool = nn.MaxPool2d(2, 2)
-        # linear layer (-> 200)
+        # linear layer (320-> 50)
         self.fc1 = nn.Linear(320, 50)
         # linear layer (50 -> 10)
         self.fc2 = nn.Linear(50, 10)
@@ -65,6 +65,7 @@ class Model():
                                              transforms.Resize(28),
                                              transforms.ToTensor(),
                                              transforms.Normalize((0.5,), (0.5,))])
+
         # get our model
         self.model.eval() # set to evaluation mode
 
@@ -105,8 +106,3 @@ model = Model()
 
 # serve model
 serve_model = ServeModel(model)
-
-# run model using flask
-if __name__ == '__main__':
-    from mlchain.rpc.server.flask_server import FlaskServer
-    FlaskServer(serve_model).run(port=5000, threads = 5)
